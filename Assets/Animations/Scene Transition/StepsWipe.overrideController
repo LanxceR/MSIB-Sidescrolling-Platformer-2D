@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StepsWipe
+  m_Controller: {fileID: 9100000, guid: 35169f976799c5240bf22f5f384cd860, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 15b0bed05c3bbb742a0ef7545c8270ac, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9ca49b5dfc825e94eada73fd363d2b70, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 16201b2213fc0a34e9a4da00d650d6ee, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c601078c0b223f042b9e86119625dcd6, type: 2}

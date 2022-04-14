@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ammo Pickup
+  m_Controller: {fileID: 9100000, guid: ecba63f1255908247906d8a8389c9ebf, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 965c2c72ef679be4c854d232747d405b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 965c2c72ef679be4c854d232747d405b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 86d6b1dd32b6bde47a8e3871d4fdab40, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1b97917b422a17247be2cfb345156daf, type: 2}
