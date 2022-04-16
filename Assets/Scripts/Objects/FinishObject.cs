@@ -26,6 +26,7 @@ public class FinishObject : MonoBehaviour
         if (isActivated) return;
 
         anim.SetTrigger("triggerActivate");
+        GameManager.GetInstance().CompleteLevel();
         GameSceneManager.GetInstance().GotoSceneWithDelay(sceneName, 2f);
     }
 }

@@ -14,6 +14,7 @@ public class EnemyPatrol : MonoBehaviour
 
     [Header("Layer Masks")]
     [SerializeField] private LayerMask groundLayerMask;
+    [SerializeField] private LayerMask oneWayPlatformLayerMask;
     [SerializeField] private LayerMask wallLayerMask;
 
     [Header("Misc")]
@@ -114,7 +115,17 @@ public class EnemyPatrol : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.Raycast(groundCheckTransform.position, Vector2.down, 0.1f, groundLayerMask);
+        LayerMask[] layerMasks = { groundLayerMask, oneWayPlatformLayerMask };
+        RaycastHit2D hit;
+
+        // isGrounded Check
+        foreach (var layerMask in layerMasks)
+        {
+            hit = Physics2D.Raycast(groundCheckTransform.position, Vector2.down, 0.1f, layerMask);
+            if (hit) return hit;
+        }
+
+        return false;
     }
 
     private bool IsFacingWall()

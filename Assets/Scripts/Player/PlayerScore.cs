@@ -6,12 +6,18 @@ public class PlayerScore : MonoBehaviour
 {
     [Header("Scores")]
     [SerializeField] private float startingScore;
+    public float MaxScore { get; private set; }
     public float Score { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
         Score = startingScore;
+
+        if (MaxScore == 0)
+        {
+            MaxScore = FindObjectsOfType<ScoreItem>().Length;
+        }
     }
 
     // Update is called once per frame

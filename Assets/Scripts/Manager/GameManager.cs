@@ -26,10 +26,12 @@ public class GameManager : MonoBehaviour
     [Header("States")]
     public bool IsPlaying = false; // Bool to determine if player is in menu or playing the game
 
-    // Subbed at: MenuUI.cs
+    // Subbed at: LevelMenuUI.cs
     public UnityAction OnPauseAction;
-    // Subbed at: MenuUI.cs
+    // Subbed at: LevelMenuUI.cs
     public UnityAction OnResumeAction;
+    // Subbed at: LevelMenuUI.cs
+    public UnityAction OnLevelComplete;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -104,6 +106,10 @@ public class GameManager : MonoBehaviour
             // Resume the game
             ResumeGame();
         }
+    }
+    public void CompleteLevel()
+    {
+        OnLevelComplete?.Invoke();
     }
 
     // Spawn player

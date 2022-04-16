@@ -15,7 +15,7 @@ public class ScoreText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Fetch playerRangedAttack
+        // Fetch playerScore
         playerScore = GameManager.GetInstance().ActivePlayer.GetComponent<PlayerScore>();
     }
 

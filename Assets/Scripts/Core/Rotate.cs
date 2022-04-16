@@ -12,10 +12,12 @@ public class Rotate : MonoBehaviour
     [SerializeField] private float frequency = 0.5f;
     [SerializeField] private float maxRotation = 45f;
 
+    private Quaternion defaultRotation;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        defaultRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -34,6 +36,6 @@ public class Rotate : MonoBehaviour
 
     private void RestrainedRotate()
     {
-        transform.localRotation = Quaternion.Euler(0f, 0f, maxRotation * Mathf.Sin(Time.fixedTime * frequency * Mathf.PI));
+        transform.localRotation = Quaternion.Euler(0f, 0f, defaultRotation.eulerAngles.z + ( maxRotation * Mathf.Sin(Time.fixedTime * frequency * Mathf.PI) ));
     }
 }
