@@ -11,9 +11,11 @@ public class Projectile : MonoBehaviour
     private float direction;
     private float lifespan;
 
+    [Header("Main Settings")]
     [SerializeField] private float projectileSpeed;
     [SerializeField] private float projectileLifetime;
     [SerializeField] private string[] targetTags;
+    [SerializeField] private AudioSource explodeSfx;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -36,7 +38,11 @@ public class Projectile : MonoBehaviour
 
         transform.Translate(direction * projectileSpeed * Time.deltaTime, 0, 0);
         lifespan += Time.deltaTime;
-        if (lifespan > projectileLifetime) destroyable.Deactivate();
+        if (lifespan > projectileLifetime)
+        {
+            explodeSfx.Play();
+            destroyable.Deactivate();
+        }
     }
 
     // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only)

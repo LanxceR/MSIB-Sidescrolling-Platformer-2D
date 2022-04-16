@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float defaultGravityScale;
     private float inputX;
     private float inputXRaw;
+    private bool hasLanded; // bool to prevent landing sfx from playing multiple times
 
     // IMPORTANT: Add a short cooldown between ground checks to prevent ground checking bleeding to next frame
     // e.g. the player had moved by too little in the next frame that isGrounded() still detected the ground
@@ -75,6 +76,13 @@ public class PlayerMovement : MonoBehaviour
         // Coyote time & jump counter
         if (IsGrounded() && jumpResetTimer <= 0)
         {
+            if (!hasLanded)
+            {
+                // Play sfx
+                AudioManager.GetInstance().PlayLandingSfx();
+                hasLanded = true;
+            }
+
             coyoteTime = 0.1f;
             extraJumpCounter = extraJumpCount;
         }
@@ -87,6 +95,13 @@ public class PlayerMovement : MonoBehaviour
         if (IsOnWall() && !IsGrounded() && inputXRaw == transform.localScale.x && wallJumpTimer <= 0)
         {
             wallJumpCoyoteTime = 0.2f;
+
+            if (!hasLanded)
+            {
+                // Play sfx
+                AudioManager.GetInstance().PlayLandingSfx();
+                hasLanded = true;
+            }
         }
         else
         {
@@ -152,10 +167,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (wallJumpCoyoteTime > 0)
         {
+            // Play sfx
+            AudioManager.GetInstance().PlayJumpSfx();
+            hasLanded = false;
+
             WallJump();
         }
         else if (coyoteTime > 0)
         {
+            // Play sfx
+            AudioManager.GetInstance().PlayJumpSfx();
+            hasLanded = false;
+
             // Reset coyote counter to 0 to avoid double jumping from button mashing
             coyoteTime = 0f;
 
@@ -164,6 +187,10 @@ public class PlayerMovement : MonoBehaviour
         } 
         else if (extraJumpCounter > 0)
         {
+            // Play sfx
+            AudioManager.GetInstance().PlayJumpSfx();
+            hasLanded = false;
+
             // Decrement jump counter
             extraJumpCounter--;
 
@@ -238,6 +265,12 @@ public class PlayerMovement : MonoBehaviour
         // Returns -1 if there's a wall to the left, 1 if there's a wall to the right
         if (colHitLeft) return -1;
         else return 1;
+    }
+
+    private void Footstep()
+    {
+        // Play sfx
+        AudioManager.GetInstance().PlayFootstepSfx();
     }
 
     private void OnDrawGizmos()

@@ -25,6 +25,9 @@ public class ScoreItem : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            // Play sfx
+            AudioManager.GetInstance().PlayItemCollecttSfx();
+
             // Fetch player's score
             PlayerScore playerScore = other.gameObject.GetComponent<PlayerScore>();
 

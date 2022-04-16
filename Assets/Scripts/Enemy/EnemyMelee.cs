@@ -6,6 +6,9 @@ public class EnemyMelee : MonoBehaviour
 {
     private MeleeAttack melee;
 
+    [Header("Main Settings")]
+    [SerializeField] private AudioSource meleeSfx;
+
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
@@ -25,6 +28,20 @@ public class EnemyMelee : MonoBehaviour
         if (melee.IsTargetInRange())
         {
             melee.Attack();
+        }
+    }
+
+    public void MeleeSfx()
+    {
+        if (meleeSfx)
+        {
+            // Play sfx
+            meleeSfx.Play();
+        }
+        else
+        {
+            // Play sfx
+            AudioManager.GetInstance().PlayMeleeSfx();
         }
     }
 }

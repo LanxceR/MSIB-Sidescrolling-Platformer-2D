@@ -29,6 +29,10 @@ public class LevelMenuUI : MonoBehaviour
         
     }
 
+    public void ButtonPressed()
+    {
+        AudioManager.GetInstance().PlayButtonSfx();
+    }
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
@@ -55,9 +59,19 @@ public class LevelMenuUI : MonoBehaviour
         if (playerScore)
         {
             if (playerScore.Score >= playerScore.MaxScore)
+            {
+                // Play sfx
+                AudioManager.GetInstance().PlayWin2Sfx();
+
                 winText.text = "Perfect!";
+            }
             else
+            {
+                // Play sfx
+                AudioManager.GetInstance().PlayWin1Sfx();
+
                 winText.text = "Level Complete";
+            }
         }
 
         winText.GetComponent<Animator>().SetTrigger("triggerEntrance");

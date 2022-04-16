@@ -33,6 +33,9 @@ public class HealthPickup : MonoBehaviour
 
             if (!playerHealth.IsOnMaxHealth())
             {
+                // Play sfx
+                AudioManager.GetInstance().PlayItemCollect3tSfx();
+
                 // Heal player
                 playerHealth.AddHealth(healthValue);
 

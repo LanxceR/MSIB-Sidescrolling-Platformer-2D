@@ -18,6 +18,7 @@ public class GameSceneManager : MonoBehaviour
     private static GameSceneManager instance;
 
     [SerializeField] private Animator anim;
+    [SerializeField] private MusicTrack musicTheme;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -35,7 +36,7 @@ public class GameSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager.GetInstance().ChangeMusic(musicTheme);
     }
 
     // Update is called once per frame

@@ -25,6 +25,9 @@ public class AmmoPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            // Play sfx
+            AudioManager.GetInstance().PlayItemCollect2tSfx();
+
             // Fetch player's ranged attack script
             PlayerRangedAttack playerRanged = other.gameObject.GetComponent<PlayerRangedAttack>();
 

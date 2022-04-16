@@ -62,7 +62,15 @@ public class PlayerRangedAttack : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        if (Ammo <= 0) return;
+        if (Ammo <= 0) 
+        {
+            // Play sfx
+            AudioManager.GetInstance().PlayOutOfAmmoSfx();
+            return;
+        }
+
+        // Play sfx
+        AudioManager.GetInstance().PlayShootSfx();
 
         PoolObject projectile = ObjectPooler.GetInstance().RequestObject(poolObjectType);
         projectile.Activate(fireTransform.position);

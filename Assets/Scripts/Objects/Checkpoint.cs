@@ -31,6 +31,9 @@ public class Checkpoint : MonoBehaviour
             checkpoint.anim.SetBool("isActivated", false);
         }
 
+        // Play sfx
+        AudioManager.GetInstance().PlayCheckpointSfx();
+
         isActivated = true;
         anim.SetBool("isActivated", isActivated);
         MoveSpawnPointToCheckpoint();

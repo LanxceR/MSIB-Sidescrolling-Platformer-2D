@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [Header("Health")]
     [SerializeField] private float maxHealth;
     [SerializeField] private Behaviour[] components;
+    public UnityEvent OnHit;
     public UnityEvent OnHealthReachZero;
     public bool isDead = false;
 
@@ -21,6 +22,10 @@ public class Health : MonoBehaviour
     [SerializeField] private int numberOfFlashes;
     [SerializeField] private Color flashColor;
     private Color defaultColor;
+
+    [Header("Enemy Settings")]
+    [SerializeField] private AudioSource hitSfx;
+    [SerializeField] private AudioSource deathSfx;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -63,19 +68,44 @@ public class Health : MonoBehaviour
 
         if (CurrentHealth > 0)
         {
+            if (gameObject.tag == "Player")
+            {
+                // Play sfx
+                AudioManager.GetInstance().PlayHurtSfx();
+            }
+            else
+            {
+                // Play sfx
+                hitSfx.Play();
+            }
+
+            OnHit?.Invoke();
+
             animator.SetTrigger("triggerHurt");
-            StartCoroutine(Invulnerability());
-            
+            StartCoroutine(Invulnerability());            
         } 
         else
         {
             // Prevent entity from dying again after its already dead
             if (!isDead)
             {
+                if (gameObject.tag == "Player")
+                {
+                    // Play sfx
+                    AudioManager.GetInstance().PlayDeathSfx();
+                }
+                else
+                {
+                    // Play sfx
+                    deathSfx.Play();
+                }
+
                 animator.SetBool("isDead", true);
                 animator.SetTrigger("triggerDie");
 
                 isDead = true;
+
+                OnHealthReachZero?.Invoke();
 
                 foreach (Behaviour component in components)
                     component.enabled = false;   

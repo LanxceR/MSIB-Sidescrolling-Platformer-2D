@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2165460899893423435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2165460899893423432}
+  - component: {fileID: 2165460899893423433}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2165460899893423432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165460899893423435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2165460899893423433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165460899893423435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe3339374cdf2b46956e03cf70efb94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - Name: Track 1
+    AudioClip: {fileID: 8300000, guid: 00379ff33019bab4c9495c70aa3c3ff7, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Type: 0
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: Track 2
+    AudioClip: {fileID: 8300000, guid: 3eb3349832ee15c448a05bfcd3a8fbce, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Type: 0
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: Track 3
+    AudioClip: {fileID: 8300000, guid: 466f7ce0edba30549bebcb8e96e931dd, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Type: 0
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: Track 4
+    AudioClip: {fileID: 8300000, guid: 42a6e4e230cce4646953a0dd33a9d75a, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Type: 0
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: Button Pressed
+    AudioClip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Jump
+    AudioClip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Footstep
+    AudioClip: {fileID: 8300000, guid: ba10edbf375198f4f84d3a9ea57239c6, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Land
+    AudioClip: {fileID: 8300000, guid: a311cb03f0effde458e1b9d9e85bbe27, type: 3}
+    Volume: 1
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: PlayerHurt
+    AudioClip: {fileID: 8300000, guid: 3dffc70ebd1dbbd45a69abeb5fb5ad6e, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: PlayerDeath
+    AudioClip: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: ItemCollect
+    AudioClip: {fileID: 8300000, guid: a8eda80959e7cbe40b5d3b46663a1469, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: ItemCollect2
+    AudioClip: {fileID: 8300000, guid: c3331a2b59e33ae499410a13af1f5e16, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: ItemCollect3
+    AudioClip: {fileID: 8300000, guid: f8a892dfc305e924f8f887a9eb236318, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Checkpoint
+    AudioClip: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Melee
+    AudioClip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Shoot
+    AudioClip: {fileID: 8300000, guid: ea7f5d3844136d343a1ef006fb18c10c, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: OutOfAmmo
+    AudioClip: {fileID: 8300000, guid: a397a64ed17ba7245a2f7c375752fbf7, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Win1
+    AudioClip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Win2
+    AudioClip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+    Volume: 0.2
+    Pitch: 1
+    Type: 1
+    Loop: 0
+    Source: {fileID: 0}

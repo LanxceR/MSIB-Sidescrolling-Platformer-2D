@@ -23,6 +23,9 @@ public class PlayerMeleeAttack : MonoBehaviour
         // Check if player is in range of attack and there's no attack cooldown
         if (Input.GetKeyDown(meleeKey))
         {
+            // Play sfx
+            AudioManager.GetInstance().PlayMeleeSfx();
+
             melee.Attack();
         }
     }

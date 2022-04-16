@@ -20,6 +20,11 @@ public class MainMenuUI : MonoBehaviour
         
     }
 
+    public void ButtonPressed()
+    {
+        AudioManager.GetInstance().PlayButtonSfx();
+    }
+
     public void BackButton()
     {
         LevelSelect.SetActive(false);
