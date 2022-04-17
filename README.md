@@ -2,4 +2,4 @@
  
 Author: Darren Osmond Lesmana - 2084920
 
-Made for MSIB ICE Insitute program
+Made for MSIB ICE Institute program
