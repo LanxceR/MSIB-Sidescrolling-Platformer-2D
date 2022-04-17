@@ -7,6 +7,7 @@ public class AmmoPickup : MonoBehaviour
     // Initialization
     [SerializeField] private int ammoValue = 1;
     private Animator anim;
+    private bool hasCollected = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class AmmoPickup : MonoBehaviour
     // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only)
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !hasCollected)
         {
             // Play sfx
             AudioManager.GetInstance().PlayItemCollect2tSfx();
@@ -39,6 +40,9 @@ public class AmmoPickup : MonoBehaviour
 
             // Animation
             anim.SetTrigger("triggerCollected");
+
+            // Toggle hasCollected bool
+            hasCollected = true;
         }
     }
 }

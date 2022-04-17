@@ -69,6 +69,11 @@ public class GameSceneManager : MonoBehaviour
     {
         StartCoroutine(LoadSceneCoroutine(scene, delay));
     }
+    // Reload scene
+    public void ReloadScene()
+    {
+        StartCoroutine(LoadSceneCoroutine(GetCurrentScene().name, 0));
+    }
 
     // Load scene coroutine
     private IEnumerator LoadSceneCoroutine(SceneName scene, float delay)
@@ -98,12 +103,6 @@ public class GameSceneManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadSceneAsync(scene);
 
-    }
-
-    // Reload scene
-    public void ReloadScene()
-    {
-        SceneManager.LoadScene(GetCurrentScene().name);
     }
 
     // Get current scene
